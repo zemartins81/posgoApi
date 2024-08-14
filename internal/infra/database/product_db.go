@@ -31,16 +31,17 @@ func (p *Product) FindAll(page, limit int, sort string) ([]entity.Product, error
 	return products, err
 }
 
-func (p *Product) FindByID(id uint) (*entity.Product, error) {
+func (p *Product) FindByID(id string) (*entity.Product, error) {
 	var product entity.Product
-	if err := p.DB.First(&product, id).Error; err != nil {
+	if err := p.DB.First(&product, "id = ?", id).Error; err != nil {
 		return nil, err
 	}
 	return &product, nil
 }
 
 func (p *Product) Update(product *entity.Product) error {
-	if err := p.FindByID(product.ID.String()).Error; err != nil {
+	_, err := p.FindByID(product.ID.String())
+	if err != nil {
 		return err
 	}
 	return p.DB.Save(product).Error
