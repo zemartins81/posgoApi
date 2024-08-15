@@ -23,3 +23,7 @@ Accept: application/json
 ###
 
 DELETE http://localhost:8080/products/d122f696-e512-4599-94de-eb1f90b7a739
+
+###
+
+GET http://localhost:8080/products
