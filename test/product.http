@@ -1,0 +1,25 @@
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{
+  "name": "Product Handler",
+  "price": 12.56
+}
+
+###
+PUT http://localhost:8080/products/d122f696-e512-4599-94de-eb1f90b7a739
+Content-Type: application/json
+
+{
+  "name": "New Product",
+  "price": 22.00
+}
+
+###
+
+GET http://localhost:8080/products/d122f696-e512-4599-94de-eb1f90b7a739
+Accept: application/json
+
+###
+
+DELETE http://localhost:8080/products/d122f696-e512-4599-94de-eb1f90b7a739
