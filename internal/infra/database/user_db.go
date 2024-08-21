@@ -9,6 +9,11 @@ type USer struct {
 	DB *gorm.DB
 }
 
+func (u *USer) FindByUser(email string) (*entity.User, error) {
+	//TODO implement me
+	panic("implement me")
+}
+
 func NewUser(db *gorm.DB) *USer {
 	return &USer{
 		DB: db,
